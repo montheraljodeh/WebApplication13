@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -6,8 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\learn.core1\learn.core1.csproj" />
-    <ProjectReference Include="..\learn.infra1\learn.infra1.csproj" />
   </ItemGroup>
-
 
 </Project>
