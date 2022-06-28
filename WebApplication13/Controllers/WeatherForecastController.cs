@@ -11,6 +11,6 @@ namespace WebApplication13.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-       
-    }
+
+    }   
 }
