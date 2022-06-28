@@ -1,0 +1,8 @@
+1-create two project (classlibrary) inside main project 
+2-write name of project projectname.infra
+3-write name of project projectname.core
+4-add ref 
+5-right click dependencies  projectname.infra
+6-check projectname.core
+7-right click dependencies in main project 
+8-add ref .core and .infra 
