@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "learn.infra1", "learn.infra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "learn.core1", "learn.core1\learn.core1.csproj", "{E05E5499-5472-4553-B1EB-956FBC099F52}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2776B7B5-9ED2-4040-BC5F-C7AC515E33FD}"
+	ProjectSection(SolutionItems) = preProject
+		instruction1 referncies.txt = instruction1 referncies.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

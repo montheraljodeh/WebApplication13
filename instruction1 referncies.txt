@@ -1,4 +1,4 @@
-1-create two project (classlibrary) inside main project 
+﻿1-create two project (classlibrary) inside main project 
 2-write name of project projectname.infra
 3-write name of project projectname.core
 4-add ref 
@@ -6,3 +6,24 @@
 6-check projectname.core
 7-right click dependencies in main project 
 8-add ref .core and .infra 
+
+
+
+--------------------------- databse
+
+1-download the package 
+Microsoft.Extensions.Configuration.Abstractions
+Microsoft.Data.SqlClient
+Dapper
+Microsoft.EntityFrameworkCore.SqlServer 5.0.17
+Microsoft.EntityFrameworkCore.Tools 5.0.17
+Oracle.ManagedDataAccess.Core​
+
+2-add connection string  in appsettings.json 
+ "ConnectionStrings": {
+
+    "DBConnectionString": "Data Source=(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 94.56.229.181)(PORT = 3488))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = traindb)));User Id=train_user284;Password=12345678Mm;Persist Security Info=True;"
+   
+
+  },
+
