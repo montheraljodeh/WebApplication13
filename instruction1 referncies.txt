@@ -22,7 +22,7 @@ Oracle.ManagedDataAccess.Core​
 2-add connection string  in appsettings.json 
  "ConnectionStrings": {
 
-    "DBConnectionString": "Data Source=(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 94.56.229.181)(PORT = 3488))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = traindb)));User Id=train_user284;Password=12345678Mm;Persist Security Info=True;"
+    "DBConnectionString": "Data Source=(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 94.56.229.181)(PORT = 3488))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = traindb)));User Id=youtusername;Password=yourpassword;Persist Security Info=True;"
    
 
   },
