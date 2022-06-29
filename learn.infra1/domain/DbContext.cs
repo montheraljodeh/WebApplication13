@@ -18,12 +18,6 @@ namespace learn.infra1.domain
     course service 
     course controller 
     each table across to onion pattern 
-
-     
-     
-     
-     
-     
      */
 
 
@@ -48,6 +42,44 @@ namespace learn.infra1.domain
             new oracleconnection(configuration)this is get connection string 
             in appsettings.json
           
+            create table course_api(
+id int primary key,
+coursename VARCHAR(255),
+courseprice int)
+
+--defineation without body
+create or replace package course_package_api as
+procedure getallcourse;
+procedure createinsertcourse(idofcourse in int,nameofcourse in varchar,price in int);
+procedure deletecourse(idofcourse in int);
+end course_package_api;
+--with body
+create or replace package body course_package_api as
+procedure getallcourse
+as
+c_all sys_refcursor;
+begin
+open c_all for
+select * from course_api;
+dbms_sql.return_result(c_all);
+end getallcourse;
+PROCEDURE createinsertcourse(idofcourse in int,nameofcourse in varchar,price in int)
+is
+begin
+
+insert into course_api values(idofcourse,nameofcourse,price);
+commit;
+end createinsertcourse;
+procedure deletecourse(idofcourse in int)
+is
+begin
+DELETE from course_api where id=idofcourse;
+commit;
+end deletecourse;
+
+end course_package_api;
+
+
           
           */
             get
