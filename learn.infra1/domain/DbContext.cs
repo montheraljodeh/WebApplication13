@@ -8,6 +8,26 @@ using System.Text;
 
 namespace learn.infra1.domain
 {
+    /*
+     each table across to layers repoisitory layer service layer 
+    controller ui layer 
+    each table repoisitory service and controller
+
+    course 
+    course repoisitory 
+    course service 
+    course controller 
+    each table across to onion pattern 
+
+     
+     
+     
+     
+     
+     */
+
+
+
     public class DbContext : IDBContext
     {
         private DbConnection connection;
