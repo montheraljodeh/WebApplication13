@@ -66,7 +66,7 @@ end getallcourse;
 PROCEDURE createinsertcourse(idofcourse in int,nameofcourse in varchar,price in int)
 is
 begin
-
+            
 insert into course_api values(idofcourse,nameofcourse,price);
 commit;
 end createinsertcourse;
@@ -86,7 +86,7 @@ end course_package_api;
             {
                 if(connection==null)
                 {
-
+                    
                     connection = new OracleConnection(configuration["ConnectionStrings:DBConnectionString"]);
 
                     connection.Open();
