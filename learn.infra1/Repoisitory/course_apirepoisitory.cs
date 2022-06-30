@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
+using System.Linq;
+
 namespace learn.infra1.Repoisitory
 {
     public class course_apirepoisitory : Icourse_apirepository
@@ -25,21 +27,43 @@ namespace learn.infra1.Repoisitory
             parameter.Add("idofcourse", id, dbType:DbType.Int32,direction:ParameterDirection.Input);
 
 
-            dbContext.dbConnection.ExecuteAsync("course_package_api.deletecourse", parameter, commandType: CommandType.StoredProcedure);
+            var result= dbContext.dbConnection.ExecuteAsync("course_package_api.deletecourse", parameter, commandType: CommandType.StoredProcedure);
+            if(result==null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
 
-
-            return true;
+           
 
         }
         
         public List<course_api> getallcourse()
         {
-            throw new NotImplementedException();
+         IEnumerable<course_api> result=dbContext.dbConnection.Query<course_api>("course_package_api.getallcourse",commandType:CommandType.StoredProcedure);
+            return result.ToList();
+        
         }
 
         public bool insertcourse(course_api course)
         {
-            throw new NotImplementedException();
+
+            var parameter = new DynamicParameters();
+            parameter.Add("idofcourse", course.id, dbType: DbType.Int32,direction:ParameterDirection.Input);
+            parameter.Add("nameofcourse", course.coursename, dbType: DbType.String, direction: ParameterDirection.Input);
+            parameter.Add("price",course.courseprice,dbType:DbType.Int32, direction: ParameterDirection.Input);
+
+
+            var result = dbContext.dbConnection.ExecuteAsync("course_package_api.createinsertcourse", parameter, commandType: CommandType.StoredProcedure);
+
+
+
+            return true;
+
+            
         }
     }
 }
