@@ -13,6 +13,10 @@ namespace learn.core1.Repoisitory
 
         public bool deletecoure(int? id);
 
+        public course_api getbyid(int id);
+
+        public bool updatecourse(course_api course);
+
 
 
 
