@@ -1,5 +1,6 @@
 ﻿using learn.core1.Data;
 using learn.core1.Repoisitory;
+using learn.infra1.domain;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +9,13 @@ namespace learn.infra1.Repoisitory
 {
     public class course_apirepoisitory : Icourse_apirepository
     {
+        private readonly DbContext dbContext;
+
+        public course_apirepoisitory(DbContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
+
         public bool deletecoure(int? id)
         {
             throw new NotImplementedException();
