@@ -1,0 +1,14 @@
+1-each table domain repo service controller ui 
+2-each table represent code first in core 
+class tablename
+{
+coloumnsname {Get;set;}
+}
+3-create interface in core inside folder repoisitory each table add methods by procedure in database
+
+4-create class in infra inside folder repoisitory
+5-connect class with interface and ovrride immplement
+
+
+6-var result = context.dbConnection.ExecuteAsync("parametername", valueofparamater, commandType: CommandType.StoredProcedure);
+7-            parameter.Add("parameter name in database",valueofparameter, datatype in parameter, direction: ParameterDirection.Input);
