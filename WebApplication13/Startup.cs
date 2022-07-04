@@ -1,7 +1,9 @@
 using learn.core1.domain;
 using learn.core1.Repoisitory;
+using learn.core1.service;
 using learn.infra1.domain;
 using learn.infra1.Repoisitory;
+using learn.infra1.service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +35,9 @@ namespace WebApplication13
             services.AddScoped<IDBContext, DbContext>();
             services.AddScoped<Icategoreyrepoisitory, categoreyrepoisitorycs>();
             services.AddScoped<Icourse_apirepository,course_apirepoisitory>();
+
+            services.AddScoped<Icategoreyservice,categoreyservice>();
+            services.AddScoped<Icourseservice, courserservice>();
             services.AddControllers();
         }
 
