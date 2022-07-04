@@ -1,3 +1,7 @@
+using learn.core1.domain;
+using learn.core1.Repoisitory;
+using learn.infra1.domain;
+using learn.infra1.Repoisitory;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +29,10 @@ namespace WebApplication13
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddScoped<IDBContext, DbContext>();
+            services.AddScoped<Icategoreyrepoisitory, categoreyrepoisitorycs>();
+            services.AddScoped<Icourse_apirepository,course_apirepoisitory>();
             services.AddControllers();
         }
 
