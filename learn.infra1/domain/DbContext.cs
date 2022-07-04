@@ -29,9 +29,11 @@ namespace learn.infra1.domain
 
 
         /*when execute project we will inialize value by constructor */
-        public DbContext(DbConnection connection, IConfiguration configuration)
+        public DbContext( IConfiguration configuration)
         {
+        
             this.configuration = configuration;
+
         }
 
         public DbConnection dbConnection

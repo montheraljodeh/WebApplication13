@@ -7,18 +7,19 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Linq;
+using learn.core1.domain;
 /*
- 
- 
- */
+
+
+*/
 namespace learn.infra1.Repoisitory
 {
     public class course_apirepoisitory : Icourse_apirepository
     {
 
-        private readonly DbContext dbContext;
+        private readonly IDBContext dbContext;
 
-        public course_apirepoisitory(DbContext dbContext)
+        public course_apirepoisitory(IDBContext dbContext)
         {
             this.dbContext = dbContext;
         }

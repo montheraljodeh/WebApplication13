@@ -1,4 +1,5 @@
 ﻿using learn.core1.Data;
+using learn.core1.Repoisitory;
 using learn.core1.service;
 using learn.infra1.Repoisitory;
 using System;
@@ -9,8 +10,8 @@ namespace learn.infra1.service
 {
     public class categoreyservice : Icategoreyservice
     {
-        private readonly categoreyrepoisitorycs categoreyrepoisitory;
-        public categoreyservice(categoreyrepoisitorycs categoreyrepoisitory)
+        private readonly Icategoreyrepoisitory categoreyrepoisitory;
+        public categoreyservice(Icategoreyrepoisitory categoreyrepoisitory)
         {
             this.categoreyrepoisitory = categoreyrepoisitory;
         }

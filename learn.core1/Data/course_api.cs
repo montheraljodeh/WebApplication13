@@ -9,7 +9,7 @@ namespace learn.core1.Data
     {
 
 
-        [Key] // primary key 
+       
         public int id { get; set; }
         public string coursename { get; set; }
         public int? courseprice { get; set; }

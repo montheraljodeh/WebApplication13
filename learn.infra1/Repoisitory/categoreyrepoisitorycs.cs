@@ -7,13 +7,14 @@ using System.Text;
 using System.Data;
 using learn.infra1.domain;
 using System.Linq;
+using learn.core1.domain;
 
 namespace learn.infra1.Repoisitory
 {
     public class categoreyrepoisitorycs : Icategoreyrepoisitory
     {
-        private readonly DbContext context;
-        public categoreyrepoisitorycs(DbContext context)
+        private readonly IDBContext context;
+        public categoreyrepoisitorycs(IDBContext context)
         {
             this.context = context;
 
@@ -42,9 +43,10 @@ namespace learn.infra1.Repoisitory
             var parameter = new DynamicParameters();
             parameter.Add("idofcat", id, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
-            IEnumerable<categorey_api> result = context.dbConnection.Query<categorey_api>("categorey_package_api.getbyid",parameter,commandType:CommandType.StoredProcedure);
+            //  IEnumerable<categorey_api> result = context.dbConnection.Query<categorey_api>("categorey_package_api.getbyid",parameter,commandType:CommandType.StoredProcedure);
 
-            return result.FirstOrDefault();
+            return new categorey_api();
+            //return result.FirstOrDefault();
         }
 
         public string insertcat(categorey_api categorey_Api)
