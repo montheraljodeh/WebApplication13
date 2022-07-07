@@ -29,7 +29,7 @@ namespace WebApplication13.Controllers
         {
             return courserservice.getallcourse();
         }
-        [HttpGet("{id}")] // retrive data by id
+        [HttpGet("getbyid/{id}")] // retrive data by id
         public course_api course(int id)
         {
 
@@ -38,7 +38,7 @@ namespace WebApplication13.Controllers
         [HttpPost]//insert new record in database
         public bool createcourse([FromBody]course_api cc)
         {
-
+            
             return courserservice.insertcourse(cc);
         }
         [HttpPut] //update
@@ -46,6 +46,14 @@ namespace WebApplication13.Controllers
         {
 
             return courserservice.updatecourse(cc);
+        }
+        [HttpPut]
+        [Route("updatecoursename")]
+        public bool updatecoursename([FromBody] course_api cc)
+        {
+
+            return courserservice.updatecoursename(cc);
+
         }
 
 

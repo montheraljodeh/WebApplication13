@@ -91,5 +91,17 @@ namespace learn.infra1.Repoisitory
             return true;
 
         }
+
+        public string updatecoursebyname(course_api course)
+        {
+            var parameter = new DynamicParameters();
+
+            parameter.Add("nameofcourse", course.coursename, dbType: DbType.String, direction: ParameterDirection.Input);
+            var result = dbContext.dbConnection.Execute("course_package_api.updatecoursename", parameter, commandType: CommandType.StoredProcedure);
+
+
+
+            return "valid";
+        }
     }
 }

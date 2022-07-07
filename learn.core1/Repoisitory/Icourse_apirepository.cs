@@ -17,7 +17,8 @@ namespace learn.core1.Repoisitory
 
         public bool updatecourse(course_api course);
 
-
+        public string updatecoursebyname(course_api course); 
+        
 
 
     }

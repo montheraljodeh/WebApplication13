@@ -40,5 +40,19 @@ namespace learn.infra1.service
         {
            return repo.updatecourse(course);    
         }
+
+        public bool updatecoursename(course_api course)
+        {
+           string result= repo.updatecoursebyname(course);
+           
+            if(result=="valid")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

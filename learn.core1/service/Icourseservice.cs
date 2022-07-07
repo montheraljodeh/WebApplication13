@@ -16,5 +16,7 @@ namespace learn.core1.service
         public course_api getbyid(int id);
 
         public bool updatecourse(course_api course);
+
+        public bool updatecoursename(course_api course);
     }
 }

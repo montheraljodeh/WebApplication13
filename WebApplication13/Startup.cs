@@ -35,9 +35,13 @@ namespace WebApplication13
             services.AddScoped<IDBContext, DbContext>();
             services.AddScoped<Icategoreyrepoisitory, categoreyrepoisitorycs>();
             services.AddScoped<Icourse_apirepository,course_apirepoisitory>();
+            services.AddScoped<Iemp_apirepositiorycs, emp_apirepoisitory>();
 
             services.AddScoped<Icategoreyservice,categoreyservice>();
             services.AddScoped<Icourseservice, courserservice>();
+
+            services.AddScoped<Iemp_service, emp_api_service>();
+
             services.AddControllers();
         }
 
