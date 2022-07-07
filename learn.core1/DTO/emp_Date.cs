@@ -8,8 +8,8 @@ namespace learn.core1.DTO
     {
 
 
-        public DateTime startdate { get; set; }
-        public DateTime enddate  { get; set; }
+        public DateTime? startdate { get; set; }
+        public DateTime? enddate  { get; set; }
 
     }
 }
