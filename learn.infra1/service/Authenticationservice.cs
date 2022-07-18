@@ -1,4 +1,5 @@
 ﻿using learn.core1.Data;
+using learn.core1.Repoisitory;
 using learn.core1.service;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -40,9 +41,24 @@ END loginapi_package;
      */
     public class Authenticationservice : IAuthenticationservice
     {
+        private readonly IAuthentication authen;
+        public Authenticationservice(IAuthentication auth)
+        {
+            this.authen = auth;
+        }
+
         //15 min
         public string Authentication_jwt(login_api login)
+        
         {
+            var result = authen.auth(login);
+
+            if(result==null)
+            {
+                return null;
+            }
+
+
             var tokenhandler = new JwtSecurityTokenHandler();
             var tokenkey = Encoding.ASCII.GetBytes("[SECRET Used To Sign And Verify Jwt Token,It can be any string]");
             var tokenDescirptor = new SecurityTokenDescriptor
@@ -50,8 +66,8 @@ END loginapi_package;
                 Subject = new System.Security.Claims.ClaimsIdentity(
                 new Claim[]
                 {
-                    new Claim(ClaimTypes.Email, "monther@gmail.com"),
-                    new Claim(ClaimTypes.Role, "Admin"),
+                    new Claim(ClaimTypes.Email,result.username),
+                    new Claim(ClaimTypes.Role, result.rolename),
                     new Claim(ClaimTypes.Name, 1.ToString())
 
                 }
