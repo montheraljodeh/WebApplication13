@@ -9,8 +9,38 @@ using System.Text;
 
 namespace learn.infra1.service
 {
+    /*
+     create table login_api(
+id int primary key,
+username varchar(255),
+password varchar(255),
+rolename varchar(255));
+
+create or replace package loginapi_package
+as
+procedure Auth (username1 in varchar,password1 in varchar);
+end loginapi_package;
+
+
+create or replace package body loginapi_package
+as
+procedure Auth (username1 in varchar,password1 in varchar)
+as
+c_all SYS_REFCURSOR;
+BEGIN
+OPEN c_all  FOR
+Select * FROM login_api where username=username1 and password=password1; 
+DBMS_SQL.RETURN_RESULT(c_all);
+end Auth;
+END loginapi_package;
+
+
+
+     
+     */
     public class Authenticationservice : IAuthenticationservice
     {
+        //15 min
         public string Authentication_jwt(login_api login)
         {
             var tokenhandler = new JwtSecurityTokenHandler();
