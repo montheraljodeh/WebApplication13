@@ -47,6 +47,7 @@ namespace WebApplication13
 
             services.AddScoped<IAuthentication, Authentication>();
             services.AddScoped<IAuthenticationservice, Authenticationservice>();
+            services.AddScoped<IEmailservice, emailclass>();
 
 
             services.AddAuthentication(x =>

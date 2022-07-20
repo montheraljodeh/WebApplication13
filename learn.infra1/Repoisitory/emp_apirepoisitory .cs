@@ -20,6 +20,43 @@ namespace learn.infra1.Repoisitory
 
         }
 
+        public bool checkemailisexist(empverifiy emp)
+        {
+
+            var parameter = new DynamicParameters();
+            parameter.Add("emailof",emp.email, dbType: DbType.String, direction: ParameterDirection.Input);
+            //select * from course_api where id=idofcourse;
+
+            IEnumerable<empverifiy> result = dBContext.dbConnection.Query<empverifiy>("emp_package.updateemail", parameter, commandType: CommandType.StoredProcedure);
+            //course_api result1 = dbContext.dbConnection.QueryFirstOrDefault<course_api>("course_package_api.getbyid", parameter, commandType: CommandType.StoredProcedure);
+            //return result;
+
+            if(result.Count()==0)
+            {
+
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+           
+        }
+
+        public bool checkverify(empverifiy emp)
+        {
+            var parameter = new DynamicParameters();
+
+            parameter.Add("veerf", emp.verficationcode, dbType: DbType.String, direction: ParameterDirection.Input);
+            parameter.Add("emailof",emp.email, dbType: DbType.String, direction: ParameterDirection.Input);
+
+
+            var result = dBContext.dbConnection.ExecuteAsync("emp_package.updayeverifiy", parameter, commandType: CommandType.StoredProcedure);
+            return true;
+
+
+        }
+
         public List<emp_dto> getfnamedate(emp_Date emp)
         {
             var parameter = new DynamicParameters();

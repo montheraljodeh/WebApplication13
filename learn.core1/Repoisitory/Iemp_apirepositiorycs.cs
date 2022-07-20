@@ -11,6 +11,8 @@ namespace learn.core1.Repoisitory
 
         public List<emp_dto> getfnamedate(emp_Date emp);
         public List<emp_dto> getfnamelnamedate(emp_Date emp);
+        public bool checkemailisexist(empverifiy emp);
 
+        public bool checkverify(empverifiy emp);
     }
 }
